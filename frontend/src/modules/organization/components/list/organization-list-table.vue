@@ -117,6 +117,20 @@
                   </template>
                 </el-table-column>
 
+                <!-- Tags filter column without checkboxes -->
+  <el-table-column
+    label="Tags"
+    prop="tags"
+    width="260"
+    fixed
+  >
+    <template #default="scope">
+      <!-- Render tags here without checkboxes -->
+      <div>{{ scope.row.tags.join(', ') }}</div>
+    </template>
+  </el-table-column>
+</el-table>
+
                 <!-- Headline -->
                 <el-table-column
                   label="Headline"
