@@ -117,19 +117,6 @@
                   </template>
                 </el-table-column>
 
-                <!-- Tags filter column without checkboxes -->
-  <el-table-column
-    label="Tags"
-    prop="tags"
-    width="260"
-    fixed
-  >
-    <template #default="scope">
-      <!-- Render tags here without checkboxes -->
-      <div>{{ scope.row.tags.join(', ') }}</div>
-    </template>
-  </el-table-column>
-
                 <!-- Headline -->
                 <el-table-column
                   label="Headline"
@@ -619,14 +606,9 @@
                       }"
                       class="block"
                     >
-                      <app-tag-list
-                        v-if="scope.row.tags?.length"
-                        :member="{
-                          ...scope.row,
-                          tags: scope.row.tags.map((t) => ({ id: t, name: t })),
-                        }"
-                        :editable="false"
-                      />
+                      <span v-if="scope.row.tags?.length" class="text-gray-900">
+                        {{ scope.row.tags.join(', ') }}
+                      </span>
                       <span v-else class="text-gray-500">-</span>
                     </router-link>
                   </template>
