@@ -129,7 +129,6 @@
       <div>{{ scope.row.tags.join(', ') }}</div>
     </template>
   </el-table-column>
-</el-table>
 
                 <!-- Headline -->
                 <el-table-column
